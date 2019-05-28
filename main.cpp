@@ -6,7 +6,8 @@
 #include "meta/invoke_func_on_specific_thread.h"
 #include "meta/invoke_func_on_main_thread.h"
 #include "meta/qobject_cast_sender.h"
-
+#include "meta/connect_qoverload.h"
+#include "meta/qenum_to_string_qvariant.h"
 
 // Core
 #include "core/q_foreach_macro.h"
@@ -18,6 +19,8 @@
 
 
 // Io
+#include "io/read_text_file_all_at_once.h"
+#include "io/read_text_file_line_byline.h"
 
 
 // FileSystem
@@ -33,13 +36,13 @@
 #include "filesystem/special_paths_demo.h"
 #include "filesystem/standard_path_temp_demo.h"
 
+
 // Concurrent
 #include "concurrent/qttimer_lambda.h"
 #include "concurrent/exec_on_ui_thread_timer.h"
 #include "concurrent/qt_concurrent_blockingmapped_usage.h"
 #include "concurrent/qtconcurrent_run_user.h"
 #include "concurrent/qthread_lambda_qeventloop.h"
-#include "concurrent/not_ready/qtimer_qprocess.h"
 
 
 // Data structures
@@ -48,8 +51,19 @@
 #include "data_structures/qbyte_arrays_forloopscan.h"
 
 
+// Network
+#include "net/ftp_example.h"
+
+
 // Process
 #include "process/qprocess_wmi_list_processes.h"
+
+
+// Random
+#include "random/qsrand_init.h"
+#include "random/random_gr_bounded.h"
+#include "random/random_number_between.h"
+#include "random/random_upper_str.h"
 
 
 // Database
@@ -61,9 +75,19 @@
 #include "crypto/str_md5_hash.h"
 
 
+// Text
+#include "text/tr_usage.h"
+#include "text/qbytearray_to_qstring.h"
+#include "text/qtextcodec_what_is_available.h"
+#include "text/qtextcodec_name_mib_pair.h"
+
+
 // Time
 #include "time/date_to_format.h"
 #include "time/about_current_date.h"
+#include "meta/qenum_tostring_qmetaenum.h"
+#include "meta/qenum_to_qstring_qmeta.h"
+#include "meta/qt_qenum_tostring_qmeta.h"
 
 
 int main(int argc, char* argv[])
@@ -115,9 +139,11 @@ int main(int argc, char* argv[])
 
 
 	// IO
-	// return SerializationDemo::main();
-	// return SerializationDemoFile::main();
-	// return SysBasicInfo::main();
+	// SerializationDemo::main();
+	// SerializationDemoFile::main();
+	// SysBasicInfo::main();
+	// ReadTextFileAllAtOnce::main();
+	// ReadTextFileLineByLine::main();
 
 
 	// Meta
@@ -128,14 +154,27 @@ int main(int argc, char* argv[])
 	// InvokeFuncInSpecificThread::main();
 	// InvokeMethodUsage::Worker::main();
 	// QCastObjectSender::Launcher::main();
+	// ConnectQOverload::main();
+	// QEnumToStringUsingQVariant::main();
+	// QEnumToStringUsingQMetaEnum::main();
+	// QEnumToStringUsingQMetaObject::main();
+	// QEnumToStringQMeta::main();
 
 
 	// Net
+	// FtpExample::main();
 
 
 	// 
 	// Process
-	GetProcessListWmic::main();
+	// GetProcessListWmic::main();
+
+
+	// Random
+	// QsRandInitialization::main();
+	// GenerateRandomNumberBounded::main();
+	// RandomNumberFrom0UpToN::main();
+	// RandomStringUppercase::main();
 
 
 	// System
@@ -143,9 +182,13 @@ int main(int argc, char* argv[])
 
 
 	// Text
+	// TrUsage::main();
+	// QByteArrayToQString::main();
+	// QTextCodecWhatIsAvailable::main();
+	// QTextCodecNameMibPair::main();
 
 
 	// Time
 	// AboutCurrentDate::main();
-	GetFormattedDateString::main();
+	// GetFormattedDateString::main();
 }

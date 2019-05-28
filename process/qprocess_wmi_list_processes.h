@@ -22,8 +22,8 @@ namespace GetProcessListWmic
 		process.waitForStarted(1000);
 		process.waitForFinished(1000);
 
-		QByteArray processList = process.readAll();
-		qDebug() << QString::fromUtf8(processList);
+		const QByteArray processList = process.readAll();
+		qDebug().noquote() << QString::fromUtf8(processList);
 
 		return 0;
 	}
