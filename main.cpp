@@ -8,6 +8,9 @@
 #include "meta/qobject_cast_sender.h"
 #include "meta/connect_qoverload.h"
 #include "meta/qenum_to_string_qvariant.h"
+#include "meta/qenum_tostring_qmetaenum.h"
+#include "meta/qt_qenum_tostring_qmeta.h"
+
 
 // Core
 #include "core/q_foreach_macro.h"
@@ -57,6 +60,11 @@
 
 // Process
 #include "process/qprocess_wmi_list_processes.h"
+#include "process/qprocess_basic.h"
+#include "process/start_process_async_lambda.h"
+#include "process/process_to_file_demo.h"
+#include "process/interactive_shell.h"
+#include "process/detached_process.h"
 
 
 // Random
@@ -85,9 +93,6 @@
 // Time
 #include "time/date_to_format.h"
 #include "time/about_current_date.h"
-#include "meta/qenum_tostring_qmetaenum.h"
-#include "meta/qenum_to_qstring_qmeta.h"
-#include "meta/qt_qenum_tostring_qmeta.h"
 
 
 int main(int argc, char* argv[])
@@ -168,7 +173,11 @@ int main(int argc, char* argv[])
 	// 
 	// Process
 	// GetProcessListWmic::main();
-
+	// QProcessBasicsDemo::main();
+	// StartProcessAsyncLambda::main();
+	// ProcessToFile::main();
+	InteractiveShell::main();
+	// DetachedProcess::main();
 
 	// Random
 	// QsRandInitialization::main();
